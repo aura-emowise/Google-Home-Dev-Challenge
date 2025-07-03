@@ -1,3 +1,5 @@
+// server.js
+
 const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
@@ -11,10 +13,8 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
-// Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Helper function to broadcast messages to all connected clients
 const broadcast = (message) => {
     wss.clients.forEach(client => {
         if (client.readyState === WebSocket.OPEN) {
@@ -24,26 +24,30 @@ const broadcast = (message) => {
 };
 
 const googleHome = new GoogleHomeService();
-// Pass the broadcast function to the LogicEngine
 const logicEngine = new LogicEngine(googleHome, broadcast);
 const simulator = new DataSimulator((data) => {
-    // This function is called every time new data is generated
     const actions = logicEngine.processData(data);
-    
-    // Broadcast data and initial actions to all connected clients
     broadcast({ type: 'update', data, actions });
 });
 
 wss.on('connection', (ws) => {
     console.log('Client connected to WebSocket');
+    
+    // При подключении нового клиента сбрасываем состояние на 'normal'
+    logicEngine.setState('normal');
+    simulator.switchToScenario('normal');
 
-    // Handle messages from client (e.g., manual simulation triggers)
     ws.on('message', (message) => {
         try {
             const parsedMessage = JSON.parse(message);
             if (parsedMessage.type === 'trigger_scenario') {
-                simulator.switchToScenario(parsedMessage.scenario);
-                console.log(`Switched to scenario: ${parsedMessage.scenario}`);
+                const scenario = parsedMessage.scenario;
+                console.log(`--- User triggered scenario: ${scenario} ---`);
+                
+                // Явно устанавливаем состояние в движке логики
+                logicEngine.setState(scenario);
+                // И синхронно меняем данные в симуляторе
+                simulator.switchToScenario(scenario);
             }
         } catch (e) {
             console.error('Failed to parse message or invalid message format.');
@@ -55,7 +59,6 @@ wss.on('connection', (ws) => {
     });
 });
 
-// Start the simulation
 simulator.start();
 
 const PORT = process.env.PORT || 3000;
