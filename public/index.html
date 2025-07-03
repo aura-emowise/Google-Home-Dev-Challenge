@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanctuary Home - Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sanctuary Home</h1>
+            <p>Your home, evolved. Proactive, safe, and aware.</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="panel status-panel">
+                <h2>Live Status</h2>
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="label">❤️ Heart Rate</span>
+                        <span id="hr" class="value">--</span>
+                        <span class="unit">bpm</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">💨 O₂ Saturation</span>
+                        <span id="spo2" class="value">--</span>
+                        <span class="unit">%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">🌲 CO₂ Level</span>
+                        <span id="co2" class="value">--</span>
+                        <span class="unit">ppm</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">🌡️ Room Temp</span>
+                        <span id="temp" class="value">--</span>
+                        <span class="unit">°C</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel controls-panel">
+                <h2>Simulation Controls</h2>
+                <p>Trigger scenarios to test the system's response.</p>
+                <div class="buttons">
+                    <button id="btn-normal">Normal</button>
+                    <button id="btn-stress">Stress / High CO₂</button>
+                    <button id="btn-emergency">Emergency (Fall)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel log-panel">
+            <h2>System Log</h2>
+            <div id="log" class="log-box"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
