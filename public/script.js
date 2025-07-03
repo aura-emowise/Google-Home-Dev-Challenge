@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const ws = new WebSocket(`ws://${window.location.host}`);
+   const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+const ws = new WebSocket(`${protocol}://${window.location.host}`);
 
     const hrEl = document.getElementById('hr');
     const spo2El = document.getElementById('spo2');
