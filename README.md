@@ -19,15 +19,16 @@ The evolutionary need for a safe shelter is the foundation of this project. "San
 For those who can't say out loud "Okay Google!" in Emergence Cases.
 
 
-Proactive, Not Reactive: Moves beyond simple commands to anticipate needs and prevent emergencies based on the user's physiological state.
 
-Hardware-Agnostic Software Solution: Leverages existing user wearables and standard Google Home devices, making it a highly scalable, low-cost software-as-a-service (SaaS) solution.
+-Proactive, Not Reactive: Moves beyond simple commands to anticipate needs and prevent emergencies based on the user's physiological state.
 
-Focus on Vulnerable Populations: Provides a critical safety net for the elderly, individuals living alone, and people with disabilities, offering peace of mind to them and their families.
+-Hardware-Agnostic Software Solution: Leverages existing user wearables and standard Google Home devices, making it a highly scalable, low-cost software-as-a-service (SaaS) solution.
 
-Autonomous Emergency Protocol: A unique, life-saving feature that unlocks doors, activates visual alerts, and notifies trusted contacts with camera access, overcoming situations where a user is unable to call for help.
+-Focus on Vulnerable Populations: Provides a critical safety net for the elderly, individuals living alone, and people with disabilities, offering peace of mind to them and their families.
 
-Seamless Integration with Google Home: Built from the ground up to utilize the power and ubiquity of Google Home APIs, creating a deeply integrated and reliable experience.
+-Autonomous Emergency Protocol: A unique, life-saving feature that unlocks doors, activates visual alerts, and notifies trusted contacts with camera access, overcoming situations where a user is unable to call for help.
+
+-Seamless Integration with Google Home: Built from the ground up to utilize the power and ubiquity of Google Home APIs, creating a deeply integrated and reliable experience.
 
 
 
@@ -45,7 +46,7 @@ Seamless Integration with Google Home: Built from the ground up to utilize the p
 
 &nbsp;   2. If not deactivated, it unlocks the front door for emergency services.
 
-&nbsp;   3. Activates a flashing red outdoor light as a visual beacon.
+&nbsp;   3. Activates a flashing red outdoor light (smart lamp) as a visual beacon.
 
 &nbsp;   4. Sends an alert with a secure link to an internal camera feed to a trusted contact.
 
