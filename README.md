@@ -39,7 +39,7 @@ The evolutionary need for a safe shelter is the foundation of this project. "San
 \- \*\*Full Simulation\*\*: The entire logic is simulated in this MVP, allowing for a clear demonstration of all features without physical hardware.
 
 
-Try it   https://sanctuary-home.onrender.com/
+TRY DEMO HERE   https://sanctuary-home.onrender.com/
 
 
 
