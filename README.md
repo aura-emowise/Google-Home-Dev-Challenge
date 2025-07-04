@@ -15,7 +15,19 @@ This project is a Minimum Viable Product (MVP) submitted for the Google Home API
 
 
 The evolutionary need for a safe shelter is the foundation of this project. "Sanctuary Home" connects data from the user's wearables (heart rate, SpO2) with smart home devices. The home doesn't just react; it anticipates needs and acts preventively, especially for vulnerable individuals (elderly, people with disabilities, children).
-for those who can't say out loud "Okay Google!" in Emergence Cases.
+
+For those who can't say out loud "Okay Google!" in Emergence Cases.
+
+
+Proactive, Not Reactive: Moves beyond simple commands to anticipate needs and prevent emergencies based on the user's physiological state.
+
+Hardware-Agnostic Software Solution: Leverages existing user wearables and standard Google Home devices, making it a highly scalable, low-cost software-as-a-service (SaaS) solution.
+
+Focus on Vulnerable Populations: Provides a critical safety net for the elderly, individuals living alone, and people with disabilities, offering peace of mind to them and their families.
+
+Autonomous Emergency Protocol: A unique, life-saving feature that unlocks doors, activates visual alerts, and notifies trusted contacts with camera access, overcoming situations where a user is unable to call for help.
+
+Seamless Integration with Google Home: Built from the ground up to utilize the power and ubiquity of Google Home APIs, creating a deeply integrated and reliable experience.
 
 
 
