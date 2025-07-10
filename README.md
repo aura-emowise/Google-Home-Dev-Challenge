@@ -1,7 +1,10 @@
-UPD   Due to the tragedy in Texas, the application has been supplemented and revised. 
+#UPD   Due to the tragedy in Texas, the application has been supplemented and revised. 
+
 The updated video is here https://youtu.be/uRZKOCI2AXM. 
+
 The link to the code is here: https://github.com/aura-emowise/UPD-Google-Maps-Platform-Awards.git
-DEMO link Live (https://upd-google-maps-platform-awards.onrender.com)
+
+DEMO link Live (https://upd-google-maps-platform-awards.onrender.com)#
 
 
 
