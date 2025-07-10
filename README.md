@@ -1,4 +1,4 @@
-#UPD   Due to the tragedy in Texas, the application has been supplemented and revised. 
+##UPD   Due to the tragedy in Texas, the application has been supplemented and revised. ##
 
 The updated video is here https://youtu.be/uRZKOCI2AXM. 
 
@@ -17,7 +17,7 @@ DEMO link Live (https://upd-google-maps-platform-awards.onrender.com)
 
 
 
-\# SANCTUARY HOME
+##\# SANCTUARY HOME##
 
 
 
