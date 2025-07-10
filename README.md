@@ -13,7 +13,7 @@ DEMO link Live (https://upd-google-maps-platform-awards.onrender.com)
 
 
 
-\# Sanctuary Home
+\# *Sanctuary Home*
 
 
 
