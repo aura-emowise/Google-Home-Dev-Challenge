@@ -20,6 +20,9 @@ DEMO link Live (https://upd-google-maps-platform-awards.onrender.com)
 
 ## SANCTUARY HOME##
 
+![Demo Here](Sanctuary-Home.gif)
+
+
 
 UPD for Google Home API here>>>>  Google-Home-Dev-Challenge/Google Home API Integration
 
