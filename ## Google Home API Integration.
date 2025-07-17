@@ -1,0 +1,53 @@
+Google Home API Integration
+
+This project is designed to deeply integrate with the Google Home ecosystem, leveraging its powerful APIs to transform a standard smart home into a proactive wellness and safety environment. While this MVP simulates the API calls for a stable and clear demonstration, the backend logic is built to directly interface with the following Google Home APIs and device traits.
+
+1. Core APIs and Device Traits Utilized
+Our system interacts with smart devices by sending commands targeting specific device traits. Here is a breakdown of the key interactions:
+
+🚪 For Emergency Access: action.devices.traits.LockUnlock
+Purpose: To grant immediate access to emergency services or trusted contacts.
+Interaction: When the Emergency Protocol is activated, our backend sends a command to the device registered as the front door lock.
+API Command Example: action.devices.commands.LockUnlock with the parameter { "unlock": true }.
+
+🚨 For Visual Alerting: action.devices.traits.OnOff & action.devices.traits.ColorSetting
+Purpose: To activate a highly visible outdoor lamp as a beacon for neighbors and first responders.
+Interaction: The Emergency Protocol targets a smart lamp device. It turns the lamp on and sets its color to a distinct emergency red. The blinking effect is achieved by sending rapid On/Off commands or using a device-specific mode if available.
+API Command Examples:
+action.devices.commands.OnOff with { "on": true }.
+action.devices.commands.ColorSetting with { "color": { "name": "red" } }.
+
+👁️ For Remote Situation Monitoring: action.devices.traits.CameraStream
+Purpose: To provide a trusted contact (e.g., a family member or social worker) with a live view inside the home to assess the situation remotely.
+Interaction: Upon activating the Emergency Protocol, our system requests a stream URL from the primary indoor camera. This secure, temporary URL is then sent via SMS or push notification to a pre-authorized contact.
+API Command Example: action.devices.commands.GetCameraStream.
+
+쾌 For Proactive Comfort (Air Quality): action.devices.traits.FanSpeed
+Purpose: To automatically improve air quality when the system detects signs of user discomfort (e.g., elevated heart rate combined with high CO2 levels).
+Interaction: The "Stress / High CO₂" scenario triggers a command to a smart fan or ventilation system.
+API Command Example: action.devices.commands.SetFanSpeed with { "fanSpeed": "high" } or action.devices.commands.OnOff with { "on": true }.
+
+🌡️ For Proactive Comfort (Temperature): action.devices.traits.TemperatureSetting
+Purpose: To adjust the room temperature if the user's vitals indicate they are feeling too hot or cold (inferred from stress markers).
+Interaction: The "Stress" scenario triggers a command to the main thermostat to set a more comfortable temperature.
+API Command Example: action.devices.commands.ThermostatTemperatureSetpoint with { "thermostatTemperatureSetpoint": 21 }.
+
+2. API Interaction Flow: The Emergency Protocol
+The most critical interaction flow demonstrates how these APIs work together seamlessly when a user is incapacitated.
+
+Simple Diagram:
+[Wearable Data] -> [Sanctuary Home Backend] -> [Google Home API] -> [Smart Devices]
+
+Step-by-step breakdown:
+Data Ingestion: Our backend continuously receives (or, in this MVP, simulates) heart rate and SpO2 data from a user's wearable device.
+
+Anomaly Detection: The logicEngine.js module analyzes the data stream. It identifies a pattern consistent with a fall or medical emergency (e.g., SpO2 < 90% and HR > 120 bpm).
+Protocol Trigger: The system initiates the "Emergency Protocol" and starts a 7-second confirmation countdown.
+
+Multi-Device API Command Execution: If the protocol is not manually cancelled by the user, the backend executes a sequence of concurrent commands via the Google Home API:
+POST /v1/devices:execute command targeting the front door lock with the LockUnlock trait.
+POST /v1/devices:execute command targeting the outdoor lamp with OnOff and ColorSetting traits.
+POST /v1/devices:execute command targeting the indoor camera with the GetCameraStream trait.
+
+External Notification: The system retrieves the camera stream URL from the API response and immediately sends it to the pre-configured emergency contact, completing the life-saving loop.
+This multi-layered approach, powered by the Google Home API, ensures a rapid, automated, and comprehensive response that could make the difference between life and death.
