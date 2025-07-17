@@ -1,4 +1,4 @@
-##UPD   Due to the tragedy in Texas, the application has been supplemented and revised. ##
+UPD   Due to the tragedy in Texas, the application has been supplemented and revised. ##
 
 The updated video is here https://youtu.be/uRZKOCI2AXM. 
 
@@ -17,10 +17,9 @@ DEMO link Live (https://upd-google-maps-platform-awards.onrender.com)
 
 
 
-## SANCTUARY HOME##
-UPD here>>>>  Google-Home-Dev-Challenge
+##SANCTUARY HOME##
+UPD for Google Home API here>>>>  Google-Home-Dev-Challenge
 /## Google Home API Integration.
-
 
 \*Your home, evolved. Proactive, safe, and aware.\*
 
