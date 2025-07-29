@@ -1,186 +1,95 @@
-## UPD   Due to the tragedy in Texas, the application has been supplemented and revised. ##
+# Sanctuary Home
 
-The updated video is here https://youtu.be/uRZKOCI2AXM. 
-
-The link to the code is here: https://github.com/aura-emowise/UPD-Google-Maps-Platform-Awards.git
-\with UPDATE for Google Home API Integration\
-
-DEMO link Live (https://upd-google-maps-platform-awards.onrender.com)
-
-
-
-
-
-
-
-
-
-
-
-
-## SANCTUARY HOME##
-
-![Demo Here](Sanctuary-Home.gif)
-
-
-
-UPD for Google Home API here>>>>  Google-Home-Dev-Challenge/Google Home API Integration
-
-
-\*Your home, evolved. Proactive, safe, and aware.\*
-
-
-
-This project is a Minimum Viable Product (MVP) submitted for the Google Home APIs Developer Challenge. It demonstrates a proactive smart home system that integrates with wearable user data to create a truly safe and comfortable environment.
-
-
-
-\## The Core Idea
-
-
-
-The evolutionary need for a safe shelter is the foundation of this project. "Sanctuary Home" connects data from the user's wearables (heart rate, SpO2) with smart home devices. The home doesn't just react; it anticipates needs and acts preventively, especially for vulnerable individuals (elderly, people with disabilities, children).
-
-For those who can't say out loud "Okay Google!" in Emergence Cases.
-
-
-
--Proactive, Not Reactive: Moves beyond simple commands to anticipate needs and prevent emergencies based on the user's physiological state.
-
--Hardware-Agnostic Software Solution: Leverages existing user wearables and standard Google Home devices, making it a highly scalable, low-cost software-as-a-service (SaaS) solution.
-
--Focus on Vulnerable Populations: Provides a critical safety net for the elderly, individuals living alone, and people with disabilities, offering peace of mind to them and their families.
-
--Autonomous Emergency Protocol: A unique, life-saving feature that unlocks doors, activates visual alerts, and notifies trusted contacts with camera access, overcoming situations where a user is unable to call for help.
-
--Seamless Integration with Google Home: Built from the ground up to utilize the power and ubiquity of Google Home APIs, creating a deeply integrated and reliable experience.
-
-
-
-\## Features
-
-
-
-\- \*\*Real-time Monitoring\*\*: A live dashboard displays the user's vital signs and home environment data.
-
-\- \*\*Comfort Automation\*\*: The system automatically adjusts the thermostat or ventilation based on user stress levels or poor air quality.
-
-\- \*\*Emergency Protocol\*\*: In case of a fall or a medical emergency (detected by a sharp change in vitals), the system:
-
-&nbsp;   1. Initiates a 7-second confirmation countdown.
-
-&nbsp;   2. If not deactivated, it unlocks the front door for emergency services.
-
-&nbsp;   3. Activates a flashing red outdoor light (smart lamp) as a visual beacon.
-
-&nbsp;   4. Sends an alert with a secure link to an internal camera feed to a trusted contact.
-
-\- \*\*Full Simulation\*\*: The entire logic is simulated in this MVP, allowing for a clear demonstration of all features without physical hardware.
-
-
-TRY DEMO HERE   https://sanctuary-home.onrender.com/
-
-
-
-\## Technology Stack
-
-
-
-\- \*\*Backend\*\*: Node.js, Express.js
-
-\- \*\*Real-time Communication\*\*: WebSockets
-
-\- \*\*Frontend\*\*: HTML, CSS, JavaScript (no frameworks)
-
-\- \*\*APIs Simulated\*\*: Google Home (Thermostat, Lock, Light, Camera)
-
-
+*Your home, evolved. Proactive, safe, and aware.*
 
 ---
 
+## 🚀 Live Demo & Video Presentation
 
+| Live Application                                      | Video Walkthrough                                 |
+| ----------------------------------------------------- | ------------------------------------------------- |
+| [**Click here to run the live demo**](https://sanctuary-home.onrender.com) | [**Click here to watch the video**](https://youtu.be/8fAsc9a29UA) |
 
-\## How to Run Locally
+*(Please allow 15-30 seconds for the free server to wake up on the first visit.)*
 
+### Quick Look
+![Sanctuary Home Demo](Sanctuary-Home.gif)
 
+---
 
-Follow these simple steps to run the simulation on your machine.
+## The Problem
 
+Every year, thousands of people, especially the elderly, disabled, or those living alone, face emergencies at home without the ability to call for help. A fall, a sudden medical issue, or an accident can become fatal when every second counts and the home remains a silent witness. Traditional smart homes react to commands, but they cannot react to a silent crisis.
 
+## Our Solution: Sanctuary Home
 
-\### Prerequisites
+**Sanctuary Home** transforms the smart home from a set of convenient gadgets into a proactive life-saving guardian. By integrating real-time biometric data from standard wearables (heart rate, SpO2) with the Google Home ecosystem, our platform enables a home to truly understand its resident's well-being.
 
+-   **Proactive Comfort:** The system senses your stress or poor air quality through your vitals and automatically adjusts the environment for you.
+-   **Autonomous Emergency Protocol:** In case of a fall or a medical emergency, the system detects the anomaly and triggers a life-saving protocol: unlocking the door for first responders, activating visual alerts, and notifying trusted contacts with camera access.
 
+We are turning every home into a guardian, especially for the most vulnerable among us.
 
-\- \[Node.js](https://nodejs.org/) (which includes npm)
+---
 
-\- \[Git](https://git-scm.com/)
+## Google Home API Integration
 
+This project is designed to deeply integrate with the Google Home ecosystem, leveraging its powerful APIs. While this MVP simulates the API calls for a clear demonstration, the backend logic is built to directly interface with the following Google Home APIs and device traits.
 
+### 1. Core APIs and Device Traits Utilized
 
-\### Installation \& Launch
+Our system interacts with smart devices by sending commands targeting specific [device traits](https://developers.home.google.com/traits).
 
+-   🚪 **Emergency Access:** `action.devices.traits.LockUnlock`
+    -   **Purpose:** To grant immediate access to emergency services.
+    -   **Interaction:** The backend sends an `unlock` command to the front door lock.
 
+-   🚨 **Visual Alerting:** `action.devices.traits.OnOff` & `action.devices.traits.ColorSetting`
+    -   **Purpose:** To activate a highly visible outdoor lamp as a beacon.
+    -   **Interaction:** The system turns the lamp on and sets its color to emergency red.
 
-1\.  \*\*Clone the repository:\*\*
+-   👁️ **Remote Monitoring:** `action.devices.traits.CameraStream`
+    -   **Purpose:** To provide a trusted contact with a live view to assess the situation.
+    -   **Interaction:** The system requests a secure, temporary stream URL from an indoor camera and sends it to a pre-authorized contact.
 
-&nbsp;   ```bash
+-   쾌 & 🌡️ **Proactive Comfort:** `action.devices.traits.FanSpeed` & `action.devices.traits.TemperatureSetting`
+    -   **Purpose:** To automatically improve air quality and adjust temperature based on user's stress markers.
+    -   **Interaction:** The system triggers commands to ventilation systems and thermostats to create a more comfortable environment.
 
-&nbsp;   git clone https://github.com/TVOY\_USERNAME/sanctuary-home.git
+### 2. API Interaction Flow: The Emergency Protocol
 
-&nbsp;   ```
+**Diagram:**
+`[Wearable Data] -> [Sanctuary Home Backend] -> [Google Home API] -> [Smart Devices]`
 
+**Step-by-step:**
+1.  **Data Ingestion & Anomaly Detection:** The backend analyzes the user's biometric data stream.
+2.  **Protocol Trigger:** A pattern consistent with a fall (e.g., SpO2 < 90% & HR > 120 bpm) initiates the Emergency Protocol countdown.
+3.  **Multi-Device API Command Execution:** If not cancelled, the backend executes a sequence of concurrent commands via the Google Home API (`POST /v1/devices:execute`) targeting the lock, lamp, and camera traits.
+4.  **External Notification:** The system retrieves the camera stream URL from the API response and immediately sends it to the emergency contact, completing the life-saving loop.
 
+---
 
-2\.  \*\*Navigate to the project directory:\*\*
+## How to Run Locally
 
-&nbsp;   ```bash
+### Prerequisites
+- [Node.js](https://nodejs.org/) (which includes npm)
+- [Git](https://git-scm.com/)
 
-&nbsp;   cd sanctuary-home
-
-&nbsp;   ```
-
-
-
-3\.  \*\*Install dependencies:\*\*
-
-&nbsp;   ```bash
-
-&nbsp;   npm install
-
-&nbsp;   ```
-
-
-
-4\.  \*\*Start the server:\*\*
-
-&nbsp;   ```bash
-
-&nbsp;   node server.js
-
-&nbsp;   ```
-
-
-
-5\.  \*\*Open your browser\*\* and go to `http://localhost:3000`. You should see the control panel.
-
-
-
-\## How to Use the Demo
-
-
-
-Once the application is running in your browser:
-
-
-
-\- \*\*Normal Scenario\*\*: The system shows normal vitals and environment.
-
-\- \*\*Stress / High CO₂ Scenario\*\*: Click this button to simulate a user feeling stressed or a room with poor air quality. Observe the `System Log` as the home automatically activates ventilation and adjusts the temperature.
-
-\- \*\*Emergency (Fall) Scenario\*\*: Click this button to simulate a medical emergency.
-
-&nbsp;   - Watch the `System Log` for the initial \*\*red\*\* alert and the 7-second countdown.
-
-&nbsp;   - \*\*Do nothing\*\*, and after 7 seconds, observe the log as the full Emergency Protocol is activated (door unlock, light, camera sharing).
-
+### Installation & Launch
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/aura-emowise/google-home-dev-challenge.git
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd google-home-dev-challenge
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Start the server:**
+    ```bash
+    npm start
+    ```
+5.  **Open your browser** and go to `http://localhost:3000`.
