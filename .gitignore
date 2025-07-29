@@ -1,2 +1,14 @@
-config.js
-node_modules/
+# Dependencies
+/node_modules
+
+# IDE configuration files
+.idea/
+*.iml
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
